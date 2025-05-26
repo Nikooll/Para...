@@ -83,27 +83,23 @@
 <body>
   <div class="card">
     <div class="heart">💗</div>
-    <h1>Para el niño más lindo del mundoo</h1>
+    <h1>Para el niño más lindo del mundo</h1>
     <p>
       Solo quería decirte lo importante que eres para mí. 💕<br>
-      dale click...
+      
     </p>
 
     <!-- Aplasta varias veces -->
-    <div>
-      <button class="btn" onclick="mostrarSecreto()">¿Quieres saber un secreto?</button>
-      <div id="secreto" class="result"></div>
-    </div>
 
     <!-- Carrusel de mensajes -->
     <div style="margin-top: 20px;">
-      <button class="btn" onclick="siguienteMensaje()">Dale clic...</button>
+      <button class="btn" onclick="siguienteMensaje()">Dale clic varias veces...</button>
       <div id="mensajes" class="result"></div>
     </div>
 
     <!-- Pregunta: Quién manda -->
     <div class="question">
-      <h2>Quién manda</h2>
+      <h2> Y quién manda</h2>
       <button class="btn" onclick="showResult('nikol')">Nikol</button>
       <button class="btn" onclick="showResult('norman')">Norman</button>
       <div id="result" class="result"></div>
@@ -125,7 +121,7 @@
         result.innerHTML = "✅ ¡Correcto! 😍";
         result.style.color = "green";
       } else {
-        result.innerHTML = "❌ Siga participando.... 🙃";
+        result.innerHTML = "❌ Siga participando jajaja🙃";
         result.style.color = "red";
       }
     }
@@ -135,9 +131,10 @@
     }
 
     const mensajes = [
-      "Eres una de mis personas favoritas",
-      "A veces me haces sonreír sin darte cuenta 💫",
-      " Me encanta hablar contigo?",
+      "Gracias x hacerme reir 💫",
+      "Gracias x hacerme enojar jajaja",
+      "Es relamente lindo tenerte en mi vd"
+      "Eres un niño increible"
     
     ];
     let index = 0;
@@ -151,7 +148,7 @@
         index++;
         if (index === mensajes.length) {
           setTimeout(() => {
-            finalDiv.innerText = "Y bueno... si alguna vez te preguntabas si alguien te piensa bonito... ✨";
+            finalDiv.innerText = "Y tienes una sonrisa hermosa ✨";
           }, 1000);
         }
       }
