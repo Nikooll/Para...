@@ -73,8 +73,9 @@
     }
 
     .result {
-      font-size: 24px;
-      margin-top: 20px;
+      font-size: 20px;
+      margin-top: 15px;
+      min-height: 30px;
     }
   </style>
 </head>
@@ -83,16 +84,38 @@
     <div class="heart">💗</div>
     <h1>Para el niño más lindo del mundoo</h1>
     <p>
-      Solo quería decirte lo importante que eres para mí.<br>
-      💕
+      Solo quería decirte lo importante que eres para mí. 💕<br>
+      Y dejarte algunas cositas por aquí...
     </p>
+
+    <!-- Botón de secreto -->
+    <div>
+      <button class="btn" onclick="mostrarSecreto()">¿Quieres saber un secreto?</button>
+      <div id="secreto" class="result"></div>
+    </div>
+
+    <!-- Carrusel de mensajes -->
+    <div style="margin-top: 20px;">
+      <button class="btn" onclick="siguienteMensaje()">Dale clic...</button>
+      <div id="mensajes" class="result"></div>
+    </div>
+
+    <!-- Pregunta: Quién manda -->
     <div class="question">
       <h2>Quién manda</h2>
       <button class="btn" onclick="showResult('nikol')">Nikol</button>
       <button class="btn" onclick="showResult('norman')">Norman</button>
       <div id="result" class="result"></div>
     </div>
+
+    <!-- Mensaje final -->
+    <div class="result" id="final" style="margin-top: 30px;"></div>
   </div>
+
+  <!-- Música suave de fondo -->
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
 
   <script>
     function showResult(name) {
@@ -105,6 +128,35 @@
         result.style.color = "red";
       }
     }
+
+    function mostrarSecreto() {
+      document.getElementById("secreto").innerHTML = "Tú haces mis días más bonitos 🥹";
+    }
+
+    const mensajes = [
+      "Eres una de mis personas favoritas 😊",
+      "A veces me haces sonreír sin darte cuenta 💫",
+      "¿Ya te dije que me encanta hablar contigo?",
+      "Si sonríes leyendo esto, ya valió la pena hacerlo 🩷",
+      "No es que me gustes... pero bueno, tal vez un poquito 🥺"
+    ];
+    let index = 0;
+
+    function siguienteMensaje() {
+      const mensajeDiv = document.getElementById("mensajes");
+      const finalDiv = document.getElementById("final");
+
+      if (index < mensajes.length) {
+        mensajeDiv.innerText = mensajes[index];
+        index++;
+        if (index === mensajes.length) {
+          setTimeout(() => {
+            finalDiv.innerText = "Y bueno... si alguna vez te preguntabas si alguien te piensa bonito... ✨";
+          }, 1000);
+        }
+      }
+    }
   </script>
 </body>
 </html>
+
