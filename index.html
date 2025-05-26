@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para ti, amor 💖</title>
+  <title> 💖</title>
   <style>
     body {
       margin: 0;
@@ -36,14 +36,14 @@
       color: #333;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
     .heart {
       font-size: 50px;
       animation: pulse 1s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     @keyframes pulse {
@@ -51,17 +51,60 @@
       50% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
+
+    .question {
+      margin-top: 30px;
+    }
+
+    .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff6f91;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff477e;
+    }
+
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="heart">💗</div>
-    <h1>Para mi amorcito 😘</h1>
+    <h1>Para el niño más lindo del mundoo</h1>
     <p>
       Solo quería decirte lo importante que eres para mí.<br>
-      Gracias por estar a mi lado y hacer cada día más especial.<br>
-      ¡Te amo muchísimo! 💕
+      💕
     </p>
+    <div class="question">
+      <h2>Quién manda</h2>
+      <button class="btn" onclick="showResult('nikol')">Nikol</button>
+      <button class="btn" onclick="showResult('norman')">Norman</button>
+      <div id="result" class="result"></div>
+    </div>
   </div>
+
+  <script>
+    function showResult(name) {
+      const result = document.getElementById("result");
+      if (name === "nikol") {
+        result.innerHTML = "✅ ¡Correcto! 😍";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = "❌ Siga participando.... 🙃";
+        result.style.color = "red";
+      }
+    }
+  </script>
 </body>
 </html>
