@@ -52,10 +52,6 @@
       100% { transform: scale(1); }
     }
 
-    .question {
-      margin-top: 30px;
-    }
-
     .btn {
       margin: 10px;
       padding: 10px 20px;
@@ -93,35 +89,11 @@
       <div id="mensajes" class="result"></div>
     </div>
 
-    <!-- Pregunta: Quién manda -->
-    <div class="question">
-      <h2>¿Y quién manda?</h2>
-      <button class="btn" onclick="showResult('nikol')">Nikol</button>
-      <button class="btn" onclick="showResult('norman')">Norman</button>
-      <div id="result" class="result"></div>
-    </div>
-
     <!-- Mensaje final -->
     <div class="result" id="final" style="margin-top: 30px;"></div>
   </div>
 
-  <!-- Música suave de fondo -->
-  <audio autoplay loop hidden>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
-  </audio>
-
   <script>
-    function showResult(name) {
-      const result = document.getElementById("result");
-      if (name === "nikol") {
-        result.innerHTML = "✅ ¡Correcto! 😍";
-        result.style.color = "green";
-      } else {
-        result.innerHTML = "❌ Siga participando jajaja";
-        result.style.color = "red";
-      }
-    }
-
     const mensajes = [
       "Gracias por hacerme reír 💫",
       "Gracias por hacerme enojar jajaja ",
@@ -148,4 +120,3 @@
   </script>
 </body>
 </html>
-
