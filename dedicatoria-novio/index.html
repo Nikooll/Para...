@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title> 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      max-width: 600px;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .question {
+      margin-top: 30px;
+    }
+
+    .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff6f91;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff477e;
+    }
+
+    .result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">💗</div>
+    <h1>Para el niño más lindo del mundo</h1>
+    <p>
+      Solo quería decirte lo importante que eres para mí.<br>
+      💕
+    </p>
+    <div class="question">
+      <h2>Quién manda</h2>
+      <button class="btn" onclick="showResult('nikol')">Nikol</button>
+      <button class="btn" onclick="showResult('norman')">Norman</button>
+      <div id="result" class="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function showResult(name) {
+      const result = document.getElementById("result");
+      if (name === "nikol") {
+        result.innerHTML = "✅ ¡Correcto! 😍";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = "❌ Siga participando... 🙃";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
